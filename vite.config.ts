@@ -6,16 +6,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          firebase: ['firebase/app', 'firebase/firestore'],
-          framer: ['framer-motion'],
-          zustand: ['zustand']
-        }
-      }
-    }
+    chunkSizeWarningLimit: 1000,
   },
   optimizeDeps: {
     exclude: ['lucide-react']
